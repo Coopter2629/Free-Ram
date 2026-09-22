@@ -16,18 +16,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f0f2f5;
+            background-color: ##2d3d3d;
             font-family: system-ui, -apple-system, sans-serif;
             overflow: hidden;
             position: relative;
         }
-
-        /* Container for the central button */
         .center-container {
             position: relative;
             z-index: 10;
         }
-
         .target-button {
             padding: 20px 40px;
             font-size: 24px;
@@ -40,17 +37,10 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s, background-color 0.2s;
         }
-
         .target-button:hover {
             background-color: #0056b3;
             transform: scale(1.05);
         }
-
-        .target-button:active {
-            transform: scale(0.95);
-        }
-
-        /* Base style for the big red arrows */
         .arrow {
             position: absolute;
             width: 0;
@@ -86,19 +76,19 @@
             transform: translateY(-50%) rotate(180deg);
         }
 
-        /* Subtle attention-grabbing animation for the arrows */
+        /* Subtle attention-grabbing animation for the arrows 
         @keyframes bounce {
             0%, 100% {
                 margin-left: 0;
                 margin-top: 0;
             }
             50% {
-                /* Moves arrows slightly closer to the center during the bounce */
+                /* Moves arrows slightly closer to the center during the bounce 
                 transform: translateX(10px) translateY(-50%);
             }
         }
 
-        /* Adjust animation direction for the top arrow specifically */
+        /* Adjust animation direction for the top arrow specifically 
         @keyframes bounce-top {
             0%, 100% { transform: translateX(-50%) rotate(90deg) translateY(0); }
             50% { transform: translateX(-50%) rotate(90deg) translateY(-10px); }
@@ -107,6 +97,7 @@
         .arrow-top {
             animation: bounce-top 1.5s infinite ease-in-out;
         }
+        */
     </style>
 </head>
 <body>
