@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Target Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Container for the central button */
+        .center-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .target-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .target-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .target-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Base style for the big red arrows */
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            /* Creates a large arrow pointing towards the center */
+            border-width: 40px 0 40px 80px;
+            border-color: transparent transparent transparent #ff0000;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        /* Position 1: Left Arrow pointing Right */
+        .arrow-left {
+            left: 15%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Position 2: Top Arrow pointing Down */
+        .arrow-top {
+            top: 15%;
+            left: 50%;
+            /* Rotates the right-pointing arrow to point down */
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        /* Position 3: Right Arrow pointing Left */
+        .arrow-right {
+            right: 15%;
+            top: 50%;
+            /* Rotates the right-pointing arrow to point left */
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* Subtle attention-grabbing animation for the arrows */
+        @keyframes bounce {
+            0%, 100% {
+                margin-left: 0;
+                margin-top: 0;
+            }
+            50% {
+                /* Moves arrows slightly closer to the center during the bounce */
+                transform: translateX(10px) translateY(-50%);
+            }
+        }
+
+        /* Adjust animation direction for the top arrow specifically */
+        @keyframes bounce-top {
+            0%, 100% { transform: translateX(-50%) rotate(90deg) translateY(0); }
+            50% { transform: translateX(-50%) rotate(90deg) translateY(-10px); }
+        }
+
+        .arrow-top {
+            animation: bounce-top 1.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Three Big Red Arrows -->
+    <div class="arrow arrow-left"></div>
+    <div class="arrow arrow-top"></div>
+    <div class="arrow arrow-right"></div>
+
+    <!-- Central Button Target -->
+    <div class="center-container">
+        <button class="target-button" onclick="alert('Button Clicked!')">Click Me!</button>
+    </div>
+
+</body>
+</html>
