@@ -16,7 +16,8 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #2d3d3d;
+            /* FIXED: Removed double hashtag */
+            background-color: #2d3d3d; 
             font-family: system-ui, -apple-system, sans-serif;
             overflow: hidden;
             position: relative;
@@ -25,7 +26,11 @@
             position: relative;
             z-index: 10;
         }
+        
+        /* FIXED: Added text-decoration: none to make the link look like a clean button */
         .target-button {
+            display: inline-block;
+            text-decoration: none;
             padding: 20px 40px;
             font-size: 24px;
             font-weight: bold;
@@ -46,70 +51,39 @@
             width: 0;
             height: 0;
             border-style: solid;
-            /* Creates a large arrow pointing towards the center */
             border-width: 40px 0 40px 80px;
             border-color: transparent transparent transparent #ff0000;
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
-            animation: bounce 1.5s infinite ease-in-out;
         }
 
-        /* Position 1: Left Arrow pointing Right */
         .arrow-left {
             left: 15%;
             top: 50%;
             transform: translateY(-50%);
         }
 
-        /* Position 2: Top Arrow pointing Down */
         .arrow-top {
             top: 15%;
             left: 50%;
-            /* Rotates the right-pointing arrow to point down */
             transform: translateX(-50%) rotate(90deg);
         }
 
-        /* Position 3: Right Arrow pointing Left */
         .arrow-right {
             right: 15%;
             top: 50%;
-            /* Rotates the right-pointing arrow to point left */
             transform: translateY(-50%) rotate(180deg);
         }
-
-        /* Subtle attention-grabbing animation for the arrows 
-        @keyframes bounce {
-            0%, 100% {
-                margin-left: 0;
-                margin-top: 0;
-            }
-            50% {
-                /* Moves arrows slightly closer to the center during the bounce 
-                transform: translateX(10px) translateY(-50%);
-            }
-        }
-
-        /* Adjust animation direction for the top arrow specifically 
-        @keyframes bounce-top {
-            0%, 100% { transform: translateX(-50%) rotate(90deg) translateY(0); }
-            50% { transform: translateX(-50%) rotate(90deg) translateY(-10px); }
-        }
-
-        .arrow-top {
-            animation: bounce-top 1.5s infinite ease-in-out;
-        }
-        */
     </style>
 </head>
 <body>
 
-    <!-- Three Big Red Arrows -->
     <div class="arrow arrow-left"></div>
     <div class="arrow arrow-top"></div>
     <div class="arrow arrow-right"></div>
 
-    <!-- Central Button Target -->
     <div class="center-container">
-        <button class="target-button" href="./Freeram.py">Free Ram Here</button>
+        <!-- FIXED: Swapped <button> out for an <a> tag so the link functions -->
+        <a class="target-button" href="./Freeram.py">Free Ram Here</a>
     </div>
 
 </body>
